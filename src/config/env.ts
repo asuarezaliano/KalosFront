@@ -1,11 +1,11 @@
 import * as yup from 'yup';
 
 interface EnvVars {
-  NEXT_BACKEND_URL: string;
+  NEXT_PUBLIC_BACKEND_URL: string;
 }
 
 const envsSchema = yup.object({
-  NEXT_BACKEND_URL: yup.string().required(),
+  NEXT_PUBLIC_BACKEND_URL: yup.string().required(),
 });
 
 let envVars: EnvVars;
@@ -21,5 +21,5 @@ try {
 }
 
 export const env = {
-  NEXT_BACKEND_URL: envVars.NEXT_BACKEND_URL,
+  NEXT_BACKEND_URL: envVars.NEXT_PUBLIC_BACKEND_URL,
 };

@@ -44,6 +44,7 @@ export const CreateTransferModal: FC<CreateTransferModalProps> = ({
             onRequestClose={onClose}
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-xl p-6 w-full max-w-md border border-gray-300 overflow-hidden"
             overlayClassName="border-gray-400 rounded-lg p-4"
+            ariaHideApp={false}
         >
             <div className="flex flex-col">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6">Create New Transfer</h2>

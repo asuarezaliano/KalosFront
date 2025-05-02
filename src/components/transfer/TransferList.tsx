@@ -29,7 +29,7 @@ export const TransferList: FC<TransferListProps> = ({ transfers }) => {
                     {transfers.map((transfer) => (
                         <tr key={transfer.id}>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                {new Date(transfer.date).toLocaleDateString()}
+                                {new Date(transfer.date).toISOString().split('T')[0]}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                 {transfer.customerName}
