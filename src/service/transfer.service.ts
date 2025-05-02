@@ -1,4 +1,5 @@
-import { CreateTransferDto, PaginatedResponse, Transfer } from '../../../types/transfer.types'
+import { FilterTransferDto, PaginatedResponse, Transfer } from '../../types/transfer.types'
+import { CreateTransferDto } from '../../types/transfer.types'
 import { api } from './api.service'
 
 export const ServiceTransfer = {
@@ -11,9 +12,15 @@ export const ServiceTransfer = {
         }
     },
 
-    getTransfers: async (): Promise<PaginatedResponse<Transfer>> => {
+    getTransfers: async (filterTransferDto: FilterTransferDto): Promise<PaginatedResponse<Transfer>> => {
         try {
-            const response = await api.get('/transfer')
+            const { page, limit, customerName } = filterTransferDto
+            const params = {
+                page,
+                limit,
+                ...(customerName && customerName !== '' && { customerName })
+            }
+            const response = await api.get('/transfer', { params })
             return response.data
         } catch (error) {
             throw new Error('Error getting transfers')

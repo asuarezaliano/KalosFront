@@ -1,6 +1,6 @@
 'use server'
 
-import { CreateTransferDto, PaginatedResponse, Transfer } from "../types/transfer.types"
+import { CreateTransferDto, FilterTransferDto, PaginatedResponse, Transfer } from "../types/transfer.types"
 import { ServiceTransfer } from "../src/service/transfer.service"
 
 
@@ -8,6 +8,6 @@ export const createTransfer = async (createTransferDto: CreateTransferDto): Prom
     return await ServiceTransfer.createTransfer(createTransferDto)
 }
 
-export const getTransfers = async (): Promise<PaginatedResponse<Transfer>> => {
-    return await ServiceTransfer.getTransfers()
+export const getTransfers = async (searchTerm: FilterTransferDto): Promise<PaginatedResponse<Transfer>> => {
+    return await ServiceTransfer.getTransfers(searchTerm)
 } 

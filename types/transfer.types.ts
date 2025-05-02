@@ -45,3 +45,12 @@ export interface CurrencyAmount {
     amount: number;
     analyticsId: string;
 }
+
+export interface PaginationDto {
+    page: number;
+    limit: number;
+}
+
+export interface FilterTransferDto extends PaginationDto {
+    customerName?: string;
+}
