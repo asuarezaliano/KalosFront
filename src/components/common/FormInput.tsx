@@ -41,7 +41,7 @@ export const FormInput: FC<FormInputProps> = ({
                 className={`
           w-full px-4 py-2
           rounded-md border text-sm
-          ${hasError ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-white'}
+          ${hasError ? 'border-red-500 bg-red-50' : 'border-gray-300 bg-white'}
           text-gray-700
           placeholder:text-gray-400
           transition-all duration-200
