@@ -42,7 +42,7 @@ export const CreateTransferModal: FC<CreateTransferModalProps> = ({
         <Modal
             isOpen={isOpen}
             onRequestClose={onClose}
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-xl p-6 w-full max-w-md border border-gray-300"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-xl p-6 w-full max-w-md border border-gray-300 overflow-hidden"
             overlayClassName="border-gray-400 rounded-lg p-4"
         >
             <div className="flex flex-col">
